@@ -1,0 +1,35 @@
+<html>
+
+<body>
+<script>
+    var durations = {
+        "w": 2000,
+        "h": 1000,
+        "q": 500,
+        "i": 250,
+        "s": 125,
+        "t": 64,
+        "x": 32,
+        "o": 16
+    };
+
+    function playNote(instrument, n) {
+        console.log(n);
+           new Audio("out/" + instrument + "/" + encodeURIComponent(n) + ".ogg").play();
+
+    }
+
+    function play(instrument, notes, loop) {
+        var tm = 0;
+        notes.split(" ").forEach(function(n) {
+            setTimeout(function() { playNote(instrument, n); }, tm);
+            tm += durations[n[n.length - 1]];
+        });
+        if (loop) {
+            setTimeout(function() { play(instrument, notes, true); }, tm);
+        }
+    }
+</script>
+<button onclick="play('ensemble', 'C4h D4h', true); play('bass', 'C2i C2i C2i D2s E2s C2i C2i C2i C2i', true)">x</button>
+</body>
+</html>
