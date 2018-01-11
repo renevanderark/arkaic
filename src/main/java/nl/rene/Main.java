@@ -33,14 +33,13 @@ public class Main {
 
         //new Player().play(new ChordProgression("I IV vi V").eachChordAs("$!i $!i Ri $!i"), new Rhythm().addLayer("..X...X...X...XO"));
         final Map<String, String> instruments = new HashMap<String, String>();
-/*        instruments.put("I1", "piano");
-        instruments.put("I56", "horn");*/
-        instruments.put("I16", "organ");
-/*        instruments.put("I24", "guitar");
+        instruments.put("I1", "piano");
+        instruments.put("I56", "horn");
+        instruments.put("I24", "guitar");
         instruments.put("I32", "bass");
         instruments.put("I40", "string");
-        instruments.put("I48", "ensemble");*/
-        String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "A", "A#", "B"};
+        instruments.put("I48", "ensemble");
+        String[] notes = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
         String[] octaves = {"2", "3", "4", "5", "6", "7"};
         String[] durations = {"w", "h", "q", "i", "s", "t", "x", "o"};
         for (String instrument : instruments.keySet()) {
